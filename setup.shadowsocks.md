@@ -3,7 +3,7 @@
 
 shadowsocks是最近比较热门的翻墙方法，资源占用小，翻墙速度快，配置简单，开源项目有多个版本可以应用。只要在搭建一个服务器端，并建立一个客户端就可以翻墙使用了。
 
-### **搭建服务器端**
+### 搭建服务器端
 
 #### 安装
 
@@ -53,7 +53,7 @@ windows下有shadowsocks-gui客户端，下载后图形界面，配置很容易�
 
 Shadowsocks官方没有为RT3052平台的路由器编译安装包，需要自己下载源代码编译。比较令人绝望的是针对HG255D编译的Shadowsocks竟然也不能在OpenWrt上直接安装，会提示平台不兼容。既然不能自动安装，那就只好手动安装了。
 
-#####手动安装原理
+#### 手动安装原理
 
 OpenWrt的ipk安装包其实是一个压缩文件，将其逐层解压两次之后可以看到有三个文件：
 
@@ -65,7 +65,7 @@ OpenWrt的ipk安装包其实是一个压缩文件，将其逐层解压两次之�
 
 我们说的手动安装其实就是代替系统将`data.tar.gz`里的可执行文件和配置文件解压到指定目录，这样也可以正常运行。但是由于系统没有记录我们的安装信息，所以手动安装的软件在系统的软件列表里是看不到的，卸载也需要手动卸载。
 
-#####开始安装
+#### 开始安装
 
 这里以编译的Shadowsocks 1.4.5为例，这个版本用的是openssl库。
 
@@ -94,7 +94,7 @@ Shadowsocks安装后会有三个文件：
 	ss-redir 透明代理
 	ss-tunnel 端口转发
 
-#####卸载Shadowsocks
+#### 卸载Shadowsocks
 
 如果需要卸载，删除安装过程添加的文件就可以卸载了，依次输入以下命令：
 
@@ -110,11 +110,11 @@ Shadowsocks安装后会有三个文件：
 	rm /usr/bin/ss-redir
 	rm /usr/bin/ss-tunnel
 
-#####配置Shadowsocks
+#### 配置Shadowsocks
 
 输入命令`vi /etc/shadowsocks.json`编辑shadowsocks配置文件。不要忘记method配置项里加密方式要加引号，否则会提示ERROR: 7:14: Unexpected a when seeking value错误
 
-#####测试Shadowsocks
+#### 测试Shadowsocks
 
 输入下面的命令启动shadowsocks客户端：
 
